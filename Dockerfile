@@ -5,4 +5,4 @@ RUN apt-get install -y npm
 RUN npm install python3
 COPY get_company_fair_valuation.py /home/user/get_company_fair_valuation.py
 WORKDIR /home/user
-CMD ["python3","get_company_fair_valuation.py"]
+CMD ["python3","/home/user/get_company_fair_valuation.py"]
