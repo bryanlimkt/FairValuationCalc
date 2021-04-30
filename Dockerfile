@@ -1,10 +1,10 @@
-FROM alpine
+FROM ubuntu:18.04
 MAINTAINER Bryan Lim
-RUN apk update
-RUN apk add python3
-RUN apk add py-pip
-RUN pip install bs4
-RUN pip install lxml
+RUN apt update
+RUN apt install -y python3
+RUN apt install -y python3-pip
+RUN pip3 install bs4
+RUN pip3 install lxml
 COPY get_company_fair_valuation.py /home/user/get_company_fair_valuation.py
 WORKDIR /home/user
 CMD ["python3","/home/user/get_company_fair_valuation.py"]
