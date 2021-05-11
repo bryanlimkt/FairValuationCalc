@@ -66,6 +66,12 @@ while is_on:
         except:
             return('Error retreiving PE ratio')
 
+    def get_price():
+        try:
+            return float(soup.select("div span[data-reactid*='32']")[0].text)
+        except:
+            return('Error retreiving stock price')
+
     eps = get_eps()
     eps_estimation = eps
     growth_rate = get_growth_rate()
@@ -85,6 +91,7 @@ while is_on:
             
         print(f'Fair Valuation is {price_estimation}')
         print(f'After Margin of Safety: {price_estimation*(margin_of_safety/100)}')
+        print(f'Current Price is: {get_price()}')
     except:
         print('Unable to get Valuation')
     
