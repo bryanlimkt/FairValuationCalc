@@ -68,7 +68,7 @@ while is_on:
 
     def get_price():
         try:
-            return float(soup.select("div span[data-reactid*='32']")[0].text)
+            return float(soup.select("div span[data-reactid*='32']")[0].text.replave(',',''))
         except:
             return('Error retreiving stock price')
 
