@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Bryan Lim
 RUN apt update
 RUN apt install -y python3
