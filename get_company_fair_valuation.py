@@ -1,6 +1,13 @@
 import requests
 import bs4
 import math
+import os
+
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
 
 def get_eps(soup):
     try:
@@ -54,6 +61,7 @@ while is_on:
     price_estimation = 0
 
     while ticker_symbol == '':
+        clearConsole()
         ticker_symbol = input('What is the ticker Symbol? ')
 
     #YAHOO Finance Main Page (Summary)
